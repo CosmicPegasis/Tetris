@@ -37,6 +37,7 @@ class Game():
     # UI
     def ui(self):
         # Separator Lines
+        # Separator 1
         separator1_pos_x = int(2 * self.display_width/3)
         separator1_length = self.display_height
 
@@ -64,6 +65,11 @@ class Game():
         # Title Screen and you Lose Screen
         # Text Display
         # Check For Events
+
+    def show_text(self, text, pos):
+        font = pygame.font.SysFont('Source Code Pro', 20)
+        font_surface = font.render(text, pos, antialias=1)
+        self.display.blit(font_surface, (0, 0))
 
     def main(self):
         # Check for events
