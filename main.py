@@ -1,23 +1,52 @@
-from settings import Settings
+from settings_for_tetris import Settings
 import pygame
 
 
 # Main Class
 class Game():
     def __init__(self):
-        self.Settings = Settings()
+        pygame.init()
 
-        # Screen
-        self.display = pygame.display.set_mode(self.Settings.screen_dimensions)
+        self.settings = Settings()
 
+        self.display = pygame.display.set_mode(self.settings.screen_dimensions)
+        # Init new block
 
-    # Score
+        # Init Next Block
+
+        # Set Score To Zero
+
+    def check_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
     # Different Blocks
+        # Import different block images
+        # Draw them on screen
+        # Block Movement
+        # Set Block
+        # Block Randomiser
 
-    # Next Block Display
+    # UI
+        # Separator Lines
 
-    # Title Screen and You Lose Screen
+        # Score
+        # Update with every block set
+
+        # Next Block Display
+
+        # Title Screen and you Lose Screen
+        # Text Display
+        # Check For Events
 
     def main(self):
-        pygame.display.update()
+        # Check for events
+        while True:
+            self.check_events()
+            pygame.display.update()
+
+
+game = Game()
+game.main()
