@@ -1,4 +1,5 @@
 from settings_for_tetris import Settings
+from settings_for_tetris import Color
 import pygame
 
 
@@ -8,6 +9,7 @@ class Game():
         pygame.init()
 
         self.settings = Settings()
+        self.color = Color()
 
         self.display = pygame.display.set_mode(self.settings.screen_dimensions)
         # Init new block
@@ -30,6 +32,7 @@ class Game():
         # Block Randomiser
 
     # UI
+    # def ui(self):
         # Separator Lines
 
         # Score
