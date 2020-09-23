@@ -10,8 +10,11 @@ class Game():
 
         self.settings = Settings()
         self.color = Color()
+        self.display_width = self.settings.screen_dimensions[0]
+        self.display_height = self.settings.screen_dimensions[1]
 
-        self.display = pygame.display.set_mode(self.settings.screen_dimensions)
+        self.display = pygame.display.set_mode(
+            (self.display_width, self.display_height))
         # Init new block
 
         # Init Next Block
@@ -32,8 +35,26 @@ class Game():
         # Block Randomiser
 
     # UI
-    # def ui(self):
+    def ui(self):
         # Separator Lines
+        separator1_pos_x = int(2 * self.display_width/3)
+        separator1_length = self.display_height
+
+        pygame.draw.rect(
+            self.display, self.color.white,
+            (separator1_pos_x, 0, 2, separator1_length))
+
+        separator2_pos_x = separator1_pos_x
+        separator2_pos_y = int(self.display_height/2)
+        separator2_width = int(self.display_width - separator1_pos_x)
+
+        pygame.draw.rect(
+            self.display,
+            self.color.white,
+            (separator2_pos_x,
+             separator2_pos_y,
+             separator2_width,
+             2))
 
         # Score
         # Update with every block set
@@ -47,6 +68,7 @@ class Game():
     def main(self):
         # Check for events
         while True:
+            self.ui()
             self.check_events()
             pygame.display.update()
 
