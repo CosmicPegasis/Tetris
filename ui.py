@@ -31,3 +31,10 @@ class UI():
              separator2_pos_y,
              separator2_width,
              2))
+        # Score
+        # Update with every block set
+
+        # Next Block Display
+
+        # Title Screen and you Lose Screen
+        # Text Display
