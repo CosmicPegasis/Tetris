@@ -1,4 +1,5 @@
 import pygame
+from settings_for_tetris import Color
 
 
 class UI():
@@ -6,6 +7,7 @@ class UI():
         self.display_width = display_width
         self.display_height = display_height
         self.display = display
+        self.color = Color()
 
     def game_ui(self):
         self.separator_1()
@@ -16,7 +18,7 @@ class UI():
         separator1_length = self.display_height
 
         pygame.draw.rect(
-            self.display, [255, 255, 255],
+            self.display, self.color.white,
             (self.separator1_pos_x, 0, 2, separator1_length))
 
     def separator_2(self):
@@ -26,7 +28,7 @@ class UI():
 
         pygame.draw.rect(
             self.display,
-            [255, 255, 255],
+            self.color.white,
             (separator2_pos_x,
              separator2_pos_y,
              separator2_width,
@@ -39,7 +41,7 @@ class UI():
     # Title Screen
     def title_screen(self):
         title_text = 'Welcome To Tetris'
-        color = [0, 255, 0]
+        color = self.color.green
 
         self.show_text(
             title_text,
@@ -56,11 +58,11 @@ class UI():
             self.display_width / 2,
             self.display_height / 2,
             font_size=20)
-    # You Lose Screen
 
+    # You Lose Screen
     def you_lose_screen(self):
         lose_text = 'You Lost'
-        color = [0, 255, 0]
+        color = self.color.green
 
         self.show_text(
             lose_text,

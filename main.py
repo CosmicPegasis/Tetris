@@ -42,8 +42,7 @@ class Game():
     def main(self):
         # Check for events
         while True:
-            # self.ui.game_ui()
-            self.ui.you_lose_screen()
+            self.ui.title_screen()
             self.check_events()
             pygame.display.update()
 
