@@ -36,7 +36,7 @@ class UI():
 
         # Next Block Display
 
-        # Title Screen and you Lose Screen
+    # Title Screen
     def title_screen(self):
         title_text = 'Welcome To Tetris'
         color = [0, 255, 0]
@@ -47,10 +47,32 @@ class UI():
             self.display_width / 2,
             self.display_height / 2 - 100,
             font_size=40)
+
         title_sub_text = 'Press P To Play Or Q To Exit'
 
         self.show_text(
             title_sub_text,
+            color,
+            self.display_width / 2,
+            self.display_height / 2,
+            font_size=20)
+    # You Lose Screen
+
+    def you_lose_screen(self):
+        lose_text = 'You Lost'
+        color = [0, 255, 0]
+
+        self.show_text(
+            lose_text,
+            color,
+            self.display_width / 2,
+            self.display_height / 2 - 100,
+            font_size=40)
+
+        lose_sub_text = 'Press P To Play Again Or Q To Exit'
+
+        self.show_text(
+            lose_sub_text,
             color,
             self.display_width / 2,
             self.display_height / 2,
