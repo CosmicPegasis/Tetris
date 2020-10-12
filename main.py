@@ -1,6 +1,7 @@
 from settings_for_tetris import Settings
 from settings_for_tetris import Color
 from ui import UI
+from block import Block
 import pygame
 
 
@@ -11,14 +12,19 @@ class Game():
 
         self.settings = Settings()
         self.color = Color()
+
         self.display_width = self.settings.screen_dimensions[0]
         self.display_height = self.settings.screen_dimensions[1]
 
         self.display = pygame.display.set_mode(
             (self.display_width, self.display_height))
+        # TODO Add SCALED once pygame updates to 2.0
+
+        pygame.display.set_caption('Tetris')
 
         self.ui = UI(self.display_width, self.display_height, self.display)
         # Init new block
+        self.block = Block()
 
         # Init Next Block
 
@@ -42,9 +48,10 @@ class Game():
     def main(self):
         # Check for events
         while True:
-            self.ui.title_screen()
+            self.ui.game_ui()
             self.check_events()
-            pygame.display.update()
+            self.block.new_block(self.display)
+            pygame.display.flip()
 
 
 game = Game()
