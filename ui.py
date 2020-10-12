@@ -9,18 +9,22 @@ class UI():
         self.display = display
         self.color = Color()
 
+    # Inits both separators
     def game_ui(self):
         self.separator_1()
         self.separator_2()
 
+    # Vertical separator
     def separator_1(self):
-        self.separator1_pos_x = int(2 * self.display_width/3)
+        self.separator1_pos_x = int(2 * self.display_width/3 - 13)
         separator1_length = self.display_height
+        print(self.separator1_pos_x)
 
         pygame.draw.rect(
             self.display, self.color.white,
             (self.separator1_pos_x, 0, 2, separator1_length))
 
+    # Horizontal Seperator
     def separator_2(self):
         separator2_pos_x = self.separator1_pos_x
         separator2_pos_y = int(self.display_height/2)
