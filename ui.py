@@ -18,7 +18,6 @@ class UI():
     def separator_1(self):
         self.separator1_pos_x = int(2 * self.display_width/3 - 13)
         separator1_length = self.display_height
-        print(self.separator1_pos_x)
 
         pygame.draw.rect(
             self.display, self.color.white,
